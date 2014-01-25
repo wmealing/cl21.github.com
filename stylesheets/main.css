@@ -1,0 +1,181 @@
+@charset "UTF-8";
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+font,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:link {
+  color: #256fba;
+}
+
+a:visited {
+  color: #458fda;
+}
+
+pre {
+  padding-left: 20px !important;
+}
+
+pre code.lisp {
+  font-size: 12pt !important;
+}
+
+body {
+  width: 700px;
+  margin: 20px auto;
+  font-family: 'Open Sans', 'Avenir Next';
+  font-size: 16pt;
+  color: #333;
+  background-color: #efefef;
+}
+
+/**
+ * Header
+ */
+header {
+  width: 100%;
+  position: relative;
+}
+
+header h1 a {
+  color: black !important;
+}
+
+nav {
+  position: absolute;
+  top: 5px;
+  right: 0;
+}
+
+nav ul {
+  list-style: none;
+}
+nav ul li {
+  padding: 0;
+  padding-left: 8px;
+  display: inline-block;
+}
+
+
+/**
+ * Body
+ */
+
+section {
+  margin: 15px 0;
+}
+
+section h2 {
+  margin: 40px 0 20px;
+}
+
+section ul {
+  margin-left: 30px;
+}
+
+#comparison {
+  text-align: center;
+}
+
+#comparison table {
+  width: 1220px;
+  position: relative;
+  left: -260px;
+}
+
+#comparison table td,
+#comparison table th {
+  width: 610px;
+}
+
+#comparison table td {
+  text-align: left;
+}
+
+#comparison table td {
+  background-color: #fff;
+}
+
+#comparison table td pre {
+  padding-left: 20px;
+  height: 100%;
+}
+
+
+/**
+ * Footer
+ */
+footer {
+  text-align: center;
+  margin: 60px 0 40px;
+}

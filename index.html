@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>CL21</title>
+  <link rel="stylesheet" href="./stylesheets/main.css" type="text/css" media="screen, tv, print">
+  <link rel="stylesheet" href="./stylesheets/github.css" type="text/css" media="screen, tv, print">
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  <script type="text/javascript" src="javascripts/highlight-lisp.js"></script>
+</head>
+<body>
+  <header>
+    <h1><a href="./">CL21</a></h1>
+    <nav>
+      <ul>
+        <!--<li><a href="./docs/">Documents</a></li>-->
+        <li><a href="https://github.com/fukamachi/cl21">GitHub Project Page</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div id="main">
+    <article>
+      <section>
+        <p>CL21 is an experimental project redesigning Common Lisp.</p>
+      <section>
+
+      <section id="features">
+        <h2>Features</h2>
+        <ul>
+          <li>More object oriented.</li>
+          <li>Add more functional programming facilities.</li>
+          <li>Organize symbols into several packages.</li>
+          <li>Include MOP.</li>
+          <li>Syntax for regular expression.</li>
+          <li>Written in pure Common Lisp.</li>
+        </ul>
+      </section>
+
+      <section id="comparison">
+        <h2>Comparison</h2>
+        <table>
+          <theader>
+            <tr>
+              <th>CL21</th>
+              <th>Common Lisp</th>
+            </tr>
+          </theader>
+          <tbody>
+            <tr>
+              <td>
+                <pre><code class="lisp">
+(let ((name "John"))
+  (princ "Hello, ${name}!\n"))
+                </code></pre>
+              </td>
+              <td>
+                <pre><code class="lisp">
+(let ((name "John"))
+  (format t "Hello, ~A!~%" name))
+                </code></pre>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <pre><code class="lisp">
+(setf (getf *hash* :name) "Eitarow Fukamachi")
+
+(getf *hash* :name)
+
+(coerce *hash* 'plist)
+                </code></pre>
+              </td>
+              <td>
+                <pre><code class="lisp">
+(setf (gethash :name *hash*) "Eitarow Fukamachi")
+
+(gethash :name *hash*)
+
+(let ((plist nil))
+    (maphash (lambda (k v)
+               (setf plist (list* k v plist)))
+             *hash*)
+    plist)
+                </code></pre>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <pre><code class="lisp">
+(let ((query (dbi:execute
+               (dbi:prepare *db*
+                            "SELECT * FROM table"))))
+  (while-let (row (dbi:fetch query))
+    (princ row)))
+                </code></pre>
+              </td>
+              <td>
+                <pre><code class="lisp">
+(loop with query = (dbi:execute
+                     (dbi:prepare *db*
+                                  "SELECT * FROM table"))
+      for row = (dbi:fetch query)
+      while row
+        do (princ row))
+                </code></pre>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <pre><code class="lisp">
+(use-package :cl21.re)
+
+(#/^(\d{4})-(\d{2})-(\d{2})$/ "2014-01-23")
+
+(re-replace #/a/ig "Eitarow Fukamachi" "α")
+                </code></pre>
+              </td>
+              <td>
+                <pre><code class="lisp">
+(ql:quickload :cl-ppcre)
+(use-package :cl-ppcre)
+
+(scan-to-strings "^(\\d{4})-(\\d{2})-(\\d{2})$"
+                 "2014-01-23")
+
+(regex-replace-all "a" "Eitarow Fukamachi" "α"
+                   :preserve-case nil)
+                </code></pre>
+              </td>
+            </tr>
+            <tr>
+              <td>
+              </td>
+              <td>
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+      </section>
+
+      <section id="discuss">
+        <h2>Discuss about this</h2>
+
+        <p>Comments are always welcome. Join the discussion in <a href="http://reddit.com/r/lisp/comments/1vtueu/cl21_common_lisp_in_the_21st_century/" target="_blank">reddit</a> or <a href="https://github.com/fukamachi/cl21/issues/1" target="_blank">GitHub Issues</a>.
+      </section>
+
+      <section id="requirements">
+        <h2>Requirements</h2>
+
+        <ul>
+          <li>Common Lisp Implementation (SBCL, Clozure CL, GNU CLISP or Allegro CL)</li>
+          <li><a href="http://www.quicklisp.org/beta/" target="_blank">Quicklisp</a></li>
+        </ul>
+      </section>
+
+      <section id="installation">
+        <h2>Installation</h2>
+        <pre><code class="lisp">
+(ql-dist:install-dist "http://qldists.8arrow.org/cl21.txt")
+(ql:quickload :cl21)
+        </code></pre>
+      </section>
+
+      <section id="updating">
+        <h2>Updating</h2>
+
+        <pre><code class="lisp">
+(ql:update-dist "cl21")
+        </code></pre>
+      </section>
+    </article>
+  </div>
+  <footer>
+    <small>&copy; Eitarow Fukamachi</small>
+  </footer>
+
+  <script type="text/javascript">
+HighlightLisp.highlight_auto();
+  </script>
+</body>
+</html>
