@@ -90,6 +90,10 @@ pre code.lisp {
   font-size: 12pt !important;
 }
 
+html {
+  min-width: 1220px;
+}
+
 body {
   width: 700px;
   margin: 20px auto;
