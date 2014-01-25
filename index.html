@@ -11,19 +11,21 @@
 <body>
   <header>
     <h1><a href="./">CL21</a></h1>
+    <iframe class="gh-btn"
+            src="http://ghbtns.com/github-btn.html?user=fukamachi&repo=cl21&type=watch&count=true&size=large"
+            allowtransparency="true" frameborder="0" scrolling="0" width="170" height="30"></iframe>
     <nav>
       <ul>
         <!--<li><a href="./docs/">Documents</a></li>-->
-        <li><a href="https://github.com/fukamachi/cl21">GitHub Project Page</a></li>
+        <li><a href="#installation">Installation</a></li>
+        <li><a href="https://github.com/fukamachi/cl21">The Project</a></li>
       </ul>
     </nav>
   </header>
 
   <div id="main">
     <article>
-      <section>
-        <p>CL21 is an experimental project redesigning Common Lisp.</p>
-      <section>
+      <p>CL21 is an experimental project redesigning Common Lisp.</p>
 
       <section id="features">
         <h2>Features</h2>
@@ -158,10 +160,27 @@
         </table>
       </section>
 
+      <section id="motivation">
+        <h2>Motivation</h2>
+        <blockquote>
+          <p>Common Lisp has succeeded.</p>
+          <div class="who">— <a href="http://www.cs.cmu.edu/Groups/AI/html/cltl/cltl2.html" target="_blank">Common Lisp the Language, 2nd Edition</a></div>
+        </blockquote>
+        <p>Common Lisp is the standardized most powerful language with high-performance implementations in the world. It has lexical closures, multi-dispatch object system called CLOS, the metaobject protocol and macros.</p>
+        <p>On the other hand, its community does not have a lot of success (at least in Japan). Most young Lispers are hacking with Ruby or Clojure.</p>
+        <p>Why? Common Lisp is much faster than them. Ruby doesn't have macros and reader macros. Then, why?</p>
+        <p>Actually, they don't require them. Because their language is already designed well enough for most people.</p>
+        <p>Is Common Lisp well-designed enough? I don't believe so. There're similar functions for different data types (<code>elt</code>, <code>aref</code> and <code>nth</code>). Long name for macros commonly used (<code>destructuring-bind</code> and <code>multiple-value-bind</code>). The order of arguments does not have consistency (<code>getf</code> and <code>gethash</code>). Its learning cost is very high.</p>
+        <p>Of course, we can abstract the implementation by using macros. However, it does not become a reason to keep using a language designed in 1994.</p>
+        <p>I think we have to consider about the future of this language for the next generation, not for us.</p>
+        <div class="note">Written on January 26, 2014 by Eitarow Fukamachi.</div>
+      <section>
+
       <section id="discuss">
         <h2>Discuss about this</h2>
 
-        <p>Comments are always welcome. Join the discussion at <a href="http://reddit.com/r/lisp/comments/1vtueu/cl21_common_lisp_in_the_21st_century/" target="_blank">reddit</a> or <a href="https://github.com/fukamachi/cl21/issues/1" target="_blank">GitHub Issues</a>.
+        <p>Have some ideas which make CL21 look good? Do you know more efficient way to implement those facilities?</p>
+        <p>Comments are always welcome. Join discussion at <a href="http://reddit.com/r/lisp/comments/1vtueu/cl21_common_lisp_in_the_21st_century/" target="_blank">reddit</a> or <a href="https://github.com/fukamachi/cl21/issues/1" target="_blank">GitHub Issues</a>.
       </section>
 
       <section id="requirements">
