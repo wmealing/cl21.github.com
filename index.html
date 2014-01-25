@@ -88,6 +88,24 @@
             <tr>
               <td>
                 <pre><code class="lisp">
+(collecting
+  (doeach ((key val) *hash*)
+    (when (> (length key) 2)
+      (collect val)))
+                </code></pre>
+              </td>
+              <td>
+                <pre><code class="lisp">
+(loop for key being each hash-key of *hash*
+      using (hash-value val)
+      when (> (length key) 2)
+        collect val)
+                </code></pre>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <pre><code class="lisp">
 (let ((query (dbi:execute
                (dbi:prepare *db*
                             "SELECT * FROM table"))))
