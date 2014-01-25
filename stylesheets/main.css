@@ -210,10 +210,6 @@ section ul {
   text-align: left;
 }
 
-#comparison table td {
-  background-color: #fff;
-}
-
 #comparison table td pre {
   padding-left: 20px;
   height: 100%;
