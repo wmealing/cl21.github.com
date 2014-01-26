@@ -92,7 +92,7 @@
                 <pre><code class="lisp">
 (collecting
   (doeach ((key val) *hash*)
-    (when (> (length key) 2)
+    (when (&lt; (length key) 2)
       (collect val)))
                 </code></pre>
               </td>
@@ -100,7 +100,7 @@
                 <pre><code class="lisp">
 (loop for key being each hash-key of *hash*
       using (hash-value val)
-      when (> (length key) 2)
+      when (&lt; (length key) 2)
         collect val)
                 </code></pre>
               </td>
@@ -168,11 +168,12 @@
         </blockquote>
         <p>Dear Common Lispers,</p>
         <p>Common Lisp is the standardized most powerful language with high-performance implementations in the world. It has lexical closures, multi-dispatch object system called CLOS, the metaobject protocol and macros.</p>
-        <p>On the other hand, its community does not have a lot of success (at least in Japan). Most young Lispers are hacking with Ruby or Clojure.</p>
-        <p>Why? Common Lisp is much faster than them. Ruby doesn't have macros and reader macros. Then, why?</p>
+        <p>On the other hand, its community does not get a lot of success (at least in Japan). Most young Lispers are hacking with Ruby or Clojure.</p>
+        <p>Why? Common Lisp is much faster than them. Ruby has no macros and reader macros. Then, why?</p>
         <p>Actually, they don't require them. Because their language is already designed well enough for most people. They don't mind its speed either.</p>
-        <p>Is Common Lisp well-designed enough? I don't believe so. There're similar functions for different data types (<code>elt</code>, <code>aref</code> and <code>nth</code>). Long name for macros commonly used (<code>destructuring-bind</code> and <code>multiple-value-bind</code>). The order of arguments does not have consistency (<code>getf</code> and <code>gethash</code>). Its learning cost is very high.</p>
-        <p>Fortunately, we have the most extensible language. We can change the interface much better by abstracting the implementation with functions, macros and reader macros. If you believe our language is the most extensible, let's justify it.</p>
+        <p>Is Common Lisp well-designed enough? I don't think so. There're similar functions for different data types (<code>elt</code>, <code>aref</code> and <code>nth</code>). Long name for macros commonly used (<code>destructuring-bind</code> and <code>multiple-value-bind</code>). The order of arguments does not have consistency (<code>getf</code> and <code>gethash</code>). Its learning cost is very high.</p>
+        <p>In such condition, can non-Common Lispers believe that Common Lisp is the most expressive one?</p>
+        <p>Fortunately, we can change the interface much better by abstracting the implementation with functions, macros and reader macros. If you believe our language is the most extensible, let's justify it.</p>
         <p>We should consider about the future of the language for the next generation, not only for us.</p>
         <div class="note">Written on January 26, 2014 by Eitarow Fukamachi.</div>
       <section>
