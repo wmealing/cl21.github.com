@@ -52,20 +52,6 @@
             <tr>
               <td>
                 <pre><code class="lisp">
-(let ((name "John"))
-  (princ "Hello, ${name}!\n"))
-                </code></pre>
-              </td>
-              <td>
-                <pre><code class="lisp">
-(let ((name "John"))
-  (format t "Hello, ~A!~%" name))
-                </code></pre>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <pre><code class="lisp">
 (defvar *hash* #{:name "Eitarow Fukamachi"})
 
 (getf *hash* :name)
