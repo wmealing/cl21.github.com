@@ -52,7 +52,21 @@
             <tr>
               <td>
                 <pre><code class="lisp">
-(defvar *hash* #{:name "Eitarow Fukamachi"})
+(let ((name "John"))
+  (princ #"Hello, ${name}\n"))
+                </code></pre>
+              </td>
+              <td>
+                <pre><code class="lisp">
+(let ((name "John"))
+  (format t "Hello, ~A~%" name))
+                </code></pre>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <pre><code class="lisp">
+(defvar *hash* #H(:name "Eitarow Fukamachi"))
 
 (getf *hash* :name)
 
@@ -77,10 +91,9 @@
             <tr>
               <td>
                 <pre><code class="lisp">
-(collecting
-  (doeach ((key val) *hash*)
-    (when (&lt; (length key) 2)
-      (collect val)))
+(doeach ((key val) *hash*)
+  (when (&lt; (length key) 2)
+    (princ #"${x}\n")))
                 </code></pre>
               </td>
               <td>
@@ -88,7 +101,7 @@
 (loop for key being each hash-key of *hash*
       using (hash-value val)
       when (&lt; (length key) 2)
-        collect val)
+        do (format t "~A~%" val))
                 </code></pre>
               </td>
             </tr>
