@@ -111,7 +111,7 @@
 (let ((query (dbi:execute
                (dbi:prepare *db*
                             "SELECT * FROM table"))))
-  (while-let (row (dbi:fetch query))
+  (while-let1 (row (dbi:fetch query))
     (princ row)))
                 </code></pre>
               </td>
