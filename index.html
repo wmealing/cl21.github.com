@@ -66,7 +66,7 @@
             <tr>
               <td>
                 <pre><code class="lisp">
-(defvar *hash* #H(:name "Eitarow Fukamachi"))
+(defvar *hash* #H(:name "Eitaro Fukamachi"))
 
 (getf *hash* :name)
 
@@ -76,7 +76,7 @@
               <td>
                 <pre><code class="lisp">
 (defvar *hash* (make-hash-table))
-(setf (gethash :name *hash*) "Eitarow Fukamachi")
+(setf (gethash :name *hash*) "Eitaro Fukamachi")
 
 (gethash :name *hash*)
 
@@ -133,7 +133,7 @@
 
 (#/^(\d{4})-(\d{2})-(\d{2})$/ "2014-01-23")
 
-(re-replace #/a/ig "Eitarow Fukamachi" "α")
+(re-replace #/a/ig "Eitaro Fukamachi" "α")
                 </code></pre>
               </td>
               <td>
@@ -144,7 +144,7 @@
 (scan-to-strings "^(\\d{4})-(\\d{2})-(\\d{2})$"
                  "2014-01-23")
 
-(regex-replace-all "a" "Eitarow Fukamachi" "α"
+(regex-replace-all "a" "Eitaro Fukamachi" "α"
                    :preserve-case nil)
                 </code></pre>
               </td>
@@ -175,7 +175,7 @@
         <p>Given this, how can programmers coming from other languages believe Common Lisp is the most expressive one?</p>
         <p>Fortunately in Common Lisp we can improve the interface with abstractions such as functions, macros, and reader macros. If you believe our language is the most expressive and powerful language, then let's justify that belief.</p>
         <p>We should consider the future of the language, not only for ourselves but for the next generation.</p>
-        <div class="note">Written on January 26, 2014 by Eitarow Fukamachi.</div>
+        <div class="note">Written on January 26, 2014 by Eitaro Fukamachi.</div>
       <section>
 
       <section id="discuss">
@@ -212,7 +212,7 @@
     </article>
   </div>
   <footer>
-    <small>&copy; Eitarow Fukamachi</small>
+    <small>&copy; Eitaro Fukamachi</small>
   </footer>
 
   <script type="text/javascript">
